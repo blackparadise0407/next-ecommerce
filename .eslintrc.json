@@ -1,12 +1,65 @@
 {
-  "extends": ["next", "next/core-web-vitals", "eslint:recommended"],
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:storybook/recommended",
+    "next",
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["import"],
   "globals": {
     "React": "readonly"
   },
   "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "import/order": [
+      "warn",
+      {
+        "pathGroups": [
+          {
+            "pattern": "@/**",
+            "group": "internal"
+          }
+        ],
+        "groups": ["builtin", "external", "internal"],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "newlines-between": "always"
+      }
+    ],
+    "no-empty-function": ["warn", { "allow": ["arrowFunctions"] }],
+    "no-empty": ["warn", { "allowEmptyCatch": true }],
+    "import/no-named-as-default-member": "off",
     "no-unused-vars": [
-      1,
-      { "vars": "all", "args": "after-used", "argsIgnorePattern": "^_" }
-    ]
-  }
+      "warn",
+      { "varsIgnorePattern": "^_", "argsIgnorePattern": "^_" }
+    ],
+    "no-debugger": "warn",
+    "no-console": "warn",
+    "eqeqeq": ["error", "always"]
+  },
+  "overrides": [
+    {
+      "files": ["*.stories.@(ts|tsx|js|jsx|mjs|cjs)"],
+      "rules": {
+        "storybook/hierarchy-separator": "error"
+      }
+    }
+  ]
 }
