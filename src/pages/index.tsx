@@ -37,14 +37,14 @@ const Home: NextPageWithLayout = () => {
       <Slider {...sliderSettings}>
         <Hero
           backgroundUrl="/hero-1.jpg"
-          title="Fall - Winter Collections 2030"
+          title="Fall - Winter Collections 2022"
           shortTitle="Summer Collection"
           description="A specialist label creating luxury essentials. Ethically crafted with an unwavering
 commitment to exceptional quality."
         />
         <Hero
           backgroundUrl="/hero-2.jpg"
-          title="Fall - Winter Collections 2030"
+          title="Spring - Summer Collections 2022"
           shortTitle="Summer Collection"
           description="A specialist label creating luxury essentials. Ethically crafted with an unwavering
 commitment to exceptional quality."

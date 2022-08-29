@@ -72,7 +72,7 @@ const MainLayoutHeader: React.FC<{}> = () => {
       </div>
       <div className="bg-white">
         <div className="container flex items-center">
-          <h1 className="flex-1">Dotfashion</h1>
+          <h1 className="flex-1 font-bold">Dotfashion</h1>
           <ul className="relative flex-1 flex items-center justify-evenly py-8 gap-10">
             {routes.map((r) => (
               <li key={r.href} id={r.href}>
