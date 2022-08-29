@@ -18,11 +18,14 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@auth0/nextjs-auth0": "^1.9.1",
+    "clsx": "^1.2.1",
     "framer-motion": "^7.2.1",
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "^4.4.0"
+    "react-icons": "^4.4.0",
+    "react-slick": "^0.29.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.13",
@@ -38,6 +41,7 @@
     "@types/node": "18.7.13",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
+    "@types/react-slick": "^0.23.10",
     "autoprefixer": "^10.4.8",
     "babel-loader": "^8.2.5",
     "eslint": "8.23.0",
