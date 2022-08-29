@@ -1,3 +1,5 @@
+import { HiArrowNarrowRight } from 'react-icons/hi';
+
 import { Button } from '../Button';
 
 export interface HeroProps {
@@ -23,12 +25,16 @@ const Hero: React.FC<HeroProps> = ({
         backgroundRepeat: 'no-repeat',
       }}
     >
-      <div className="container grid grid-cols-12">
+      <div className="container grid grid-cols-12 z-10">
         <div className="col-span-8 lg:col-span-7 xl:col-span-5 space-y-5">
-          <h6 className="uppercase text-red-500 font-medium">{shortTitle}</h6>
-          <h1 className="text-5xl font-medium leading-snug">{title}</h1>
+          <h6 className="uppercase text-red-500 font-medium tracking-widest">
+            {shortTitle}
+          </h6>
+          <h1 className="text-5xl font-semibold leading-snug">{title}</h1>
           <p className="text-neutral-600">{description}</p>
-          <Button>SHOP NOW</Button>
+          <Button size="large" icon={<HiArrowNarrowRight />}>
+            SHOP NOW
+          </Button>
         </div>
       </div>
     </div>

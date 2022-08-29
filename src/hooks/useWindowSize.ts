@@ -5,7 +5,7 @@ type WindowSize = [number, number];
 export function useWindowSize() {
   const [size, setSize] = React.useState<WindowSize>([0, 0]);
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     function updateSize() {
       setSize([window.innerWidth, window.innerHeight]);
     }

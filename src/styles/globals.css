@@ -56,3 +56,8 @@ a {
 .slick-next {
   @apply text-black hover:text-neutral-500 transition-colors;
 }
+
+.slick-next:before,
+.slick-prev:before {
+  content: '';
+}

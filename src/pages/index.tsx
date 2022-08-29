@@ -1,25 +1,32 @@
 import Head from 'next/head';
-import { Fragment } from 'react';
+import { Fragment, useMemo } from 'react';
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 import Slider, { Settings } from 'react-slick';
 
-import { Hero } from '@/components';
+import { Hero, SlickButton } from '@/components';
+import { useWindowSize } from '@/hooks/useWindowSize';
 import MainLayout from '@/layouts/MainLayout/MainLayout';
 
 import { NextPageWithLayout } from './page';
 
 const Home: NextPageWithLayout = () => {
-  const sliderSettings: Settings = {
-    dots: false,
-    arrows: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    fade: true,
-    nextArrow: <BsArrowRight />,
-    prevArrow: <BsArrowLeft />,
-  };
+  const [w] = useWindowSize();
+
+  const sliderSettings: Settings = useMemo(
+    () => ({
+      dots: false,
+      arrows: w > 768,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      fade: true,
+      nextArrow: <SlickButton icon={<BsArrowRight className="text-4xl" />} />,
+      prevArrow: <SlickButton icon={<BsArrowLeft className="text-4xl" />} />,
+    }),
+    [w],
+  );
+
   return (
     <Fragment>
       <Head>

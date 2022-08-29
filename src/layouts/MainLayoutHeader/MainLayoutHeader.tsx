@@ -34,7 +34,7 @@ const MainLayoutHeader: React.FC<{}> = () => {
   const { user } = useUser();
   const { asPath } = useRouter();
   const [lineStyle, setLineStyle] = React.useState<React.CSSProperties>({
-    bottom: 15,
+    bottom: 26,
     transition: 'left 0.2s ease, width 0.2s ease',
   });
   const [w] = useWindowSize();
@@ -73,7 +73,7 @@ const MainLayoutHeader: React.FC<{}> = () => {
       <div className="bg-white">
         <div className="container flex items-center">
           <h1 className="flex-1">Dotfashion</h1>
-          <ul className="relative flex-1 flex items-center justify-evenly py-6 gap-10">
+          <ul className="relative flex-1 flex items-center justify-evenly py-8 gap-10">
             {routes.map((r) => (
               <li key={r.href} id={r.href}>
                 <StyledLink href={r.href}>{r.label}</StyledLink>
