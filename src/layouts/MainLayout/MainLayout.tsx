@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 
+import MainLayoutFooter from '../MainLayoutFooter/MainLayoutFooter';
 import MainLayoutHeader from '../MainLayoutHeader/MainLayoutHeader';
 
 interface MainLayoutProps {
@@ -11,6 +12,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
     <Fragment>
       <MainLayoutHeader />
       <main>{children}</main>
+      <MainLayoutFooter />
     </Fragment>
   );
 };

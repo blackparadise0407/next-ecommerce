@@ -1,5 +1,5 @@
 const base = {};
 
-export const mockMainLayoutNavbarProps = {
+export const mockMainLayoutHeaderProps = {
   base,
 };

@@ -84,7 +84,10 @@ const MainLayoutHeader: React.FC<{}> = () => {
           <div className="flex-1 flex text-xl gap-5 justify-end">
             <RiSearch2Line />
             <RiHeart2Line />
-            <RiShoppingBagLine />
+            <div className="flex items-center gap-2">
+              <RiShoppingBagLine />
+              <span className="text-sm font-medium">$0.00</span>
+            </div>
           </div>
         </div>
       </div>
