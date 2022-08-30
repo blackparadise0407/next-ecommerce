@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import { RiHeart2Line, RiSearch2Line, RiShoppingBagLine } from 'react-icons/ri';
 
+import { ROUTES } from '@/common/routing';
 import { useWindowSize } from '@/hooks/useWindowSize';
 
 const StyledLink: React.FC<
@@ -23,12 +24,10 @@ const StyledLink: React.FC<
 };
 
 const routes: Array<{ href: string; label: string }> = [
-  { href: '/', label: 'Home' },
-  { href: '/men', label: 'Men' },
-  { href: '/woman', label: 'Woman' },
-  { href: '/baby-collection', label: 'Baby collection' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/contacts', label: 'Contacts' },
+  { href: ROUTES.home, label: 'Home' },
+  { href: ROUTES.shop, label: 'Shop' },
+  { href: ROUTES.blog, label: 'Blog' },
+  { href: ROUTES.contacts, label: 'Contacts' },
 ];
 
 const trans: Translation = {
