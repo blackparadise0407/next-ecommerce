@@ -52,7 +52,8 @@
     ],
     "no-debugger": "warn",
     "no-console": "warn",
-    "eqeqeq": ["error", "always"]
+    "eqeqeq": ["error", "always"],
+    "no-undef": "off"
   },
   "overrides": [
     {
