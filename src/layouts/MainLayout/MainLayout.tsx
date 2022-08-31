@@ -1,4 +1,5 @@
-import { Fragment } from 'react';
+import { useUser } from '@auth0/nextjs-auth0';
+import React from 'react';
 
 import MainLayoutFooter from '../MainLayoutFooter/MainLayoutFooter';
 import MainLayoutHeader from '../MainLayoutHeader/MainLayoutHeader';
@@ -8,12 +9,14 @@ interface MainLayoutProps {
 }
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
+  const { user } = useUser();
+
   return (
-    <Fragment>
-      <MainLayoutHeader />
+    <React.Fragment>
+      <MainLayoutHeader user={user} />
       <main>{children}</main>
       <MainLayoutFooter />
-    </Fragment>
+    </React.Fragment>
   );
 };
 export default MainLayout;

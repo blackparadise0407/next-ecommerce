@@ -1,4 +1,4 @@
-import { useUser } from '@auth0/nextjs-auth0';
+import { UserProfile } from '@auth0/nextjs-auth0';
 import Link, { LinkProps } from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
@@ -6,6 +6,10 @@ import { RiHeart2Line, RiSearch2Line, RiShoppingBagLine } from 'react-icons/ri';
 
 import { ROUTES } from '@/common/routing';
 import { useWindowSize } from '@/hooks/useWindowSize';
+
+interface MainLayoutHeaderProps {
+  user?: UserProfile;
+}
 
 const StyledLink: React.FC<
   LinkProps & {
@@ -45,8 +49,7 @@ const trans: Translation = {
   },
 };
 
-const MainLayoutHeader: React.FC<{}> = () => {
-  const { user } = useUser();
+const MainLayoutHeader: React.FC<MainLayoutHeaderProps> = ({ user }) => {
   const { asPath, locale } = useRouter();
   const [lineStyle, setLineStyle] = React.useState<React.CSSProperties>({
     bottom: 26,
@@ -73,10 +76,10 @@ const MainLayoutHeader: React.FC<{}> = () => {
           <ul className="flex items-center gap-6 uppercase tracking-widest">
             <li>
               {user ? (
-                <React.Fragment>
+                <div className="max-w-[240px] truncate">
                   <span className="normal-case">{t.hi}</span>,{' '}
                   <Link href={`/${user.email}`}>{user.name}</Link>
-                </React.Fragment>
+                </div>
               ) : (
                 <Link href="/api/auth/login">{t.signIn}</Link>
               )}

@@ -64,11 +64,13 @@ const Button: React.FC<ButtonProps> = ({
   variant = 'primary',
   block = false,
   icon,
+  type = 'button',
   ...rest
 }) => {
   return (
     <button
       {...rest}
+      type={type}
       className={clsx(
         'flex items-center gap-2 tracking-widest border border-transparent transition-all',
         block && 'w-full',
